@@ -2,6 +2,16 @@ server:
   port : 8090
 
 spring:
-  freemarker:
-    template-loader-path: classpath:/templates/
-    suffix: .ftl
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+        ddl-auto: update
+        format_sql: true
+  datasource:
+    platform: oracle
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: 1234
